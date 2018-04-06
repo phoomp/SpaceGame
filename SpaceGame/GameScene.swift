@@ -17,8 +17,9 @@ class GameScene: SKScene {
     var bulletSpawnPointY : CGFloat! = nil
     
     override func didMove(to view: SKView) {
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(GameScene.moveBullets), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameScene.moveBullets), userInfo: nil, repeats: true)
         playerShip = self.childNode(withName: "playerShip") as! SKSpriteNode
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(GameScene.removeBullets), userInfo: nil, repeats: true)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -30,9 +31,9 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for _ in touches {
-            let bullets = SKShapeNode(rectOf: CGSize(width: 3, height: 40))
-            bullets.strokeColor = SKColor.white
-            bullets.fillColor = SKColor.white
+            let bullets = SKShapeNode(rectOf: CGSize(width: 8, height: 40))
+            bullets.strokeColor = SKColor.green
+            bullets.fillColor = SKColor.green
             bullets.alpha = 0.4
             bullets.name = "bullets"
             bullets.zPosition = 10
@@ -46,5 +47,13 @@ class GameScene: SKScene {
         enumerateChildNodes(withName: "bullets", using: { (bullets, stop) in
             bullets.position.y += 30
         })
+    }
+    
+    @objc func removeBullets() {
+        for child in children {
+            if child.position.y > 900 {
+                child.removeFromParent()
+            }
+        }
     }
 }
