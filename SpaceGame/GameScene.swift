@@ -15,11 +15,15 @@ class GameScene: SKScene {
     var bullets = SKSpriteNode()
     var bulletSpawnPointX : CGFloat! = nil
     var bulletSpawnPointY : CGFloat! = nil
+    var difficultLevel = 95
+
+    // array of space rock
+    var spaceRocks: [SKSpriteNode] = []
     
     override func didMove(to view: SKView) {
-        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameScene.moveBullets), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameScene.moveAllObjects), userInfo: nil, repeats: true)
         playerShip = self.childNode(withName: "playerShip") as! SKSpriteNode
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(GameScene.removeBullets), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(GameScene.removeAllObjects), userInfo: nil, repeats: true)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,10 +47,20 @@ class GameScene: SKScene {
         }
     }
     
+    @objc func moveAllObjects() {
+        moveBullets()
+        moveSpaceRock()
+        createSpaceRock()
+    }
+    
     @objc func moveBullets() {
         enumerateChildNodes(withName: "bullets", using: { (bullets, stop) in
             bullets.position.y += 30
         })
+    }
+    
+    @objc func removeAllObjects() {
+        removeBullets()
     }
     
     @objc func removeBullets() {
@@ -55,5 +69,27 @@ class GameScene: SKScene {
                 child.removeFromParent()
             }
         }
+    }
+    
+    func createSpaceRock() {
+        if arc4random_uniform(100) >= difficultLevel {
+            let texture = SKTexture(imageNamed: "spaceRock")
+            let rock = SKSpriteNode(texture: texture)
+            let height = self.view!.frame.height
+            let width = self.view!.frame.width
+            let randomPosition = CGPoint( x:CGFloat(arc4random_uniform( UInt32( floor( width  ) ) ) ),
+                                          y:CGFloat(arc4random_uniform( UInt32( floor( height ) ) ) ))
+            rock.position = randomPosition
+            rock.name = "spaceRocks"
+            rock.zPosition = -100
+            addChild(rock)
+        }
+    }
+    
+    func moveSpaceRock() {
+        enumerateChildNodes(withName: "spaceRocks", using: { (rock, stop) in
+            rock.position.y -= 5
+            rock.zRotation += 0.1
+        })
     }
 }
