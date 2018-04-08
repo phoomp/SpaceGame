@@ -95,9 +95,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     @objc func gameOver() {
-        //let menuScene = SKScene(fileNamed: "GameMenu")!
-        //menuScene.scaleMode = .aspectFill
-        //view?.presentScene(menuScene, transition: SKTransition.doorsCloseHorizontal(withDuration: TimeInterval(2)))
+        let menuScene = SKScene(fileNamed: "GameMenu")!
+        menuScene.scaleMode = .aspectFill
+        view?.presentScene(menuScene, transition: SKTransition.doorsCloseHorizontal(withDuration: TimeInterval(2)))
     }
     
     func createSpaceRock() {
