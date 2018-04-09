@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1030D5A6207903360059A560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1030D5A4207903360059A560 /* Main.storyboard */; };
 		1030D5A8207903B50059A560 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030D5A7207903B50059A560 /* GameViewController.swift */; };
+		106CAAA2207AE7EE00D80510 /* HardMode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 106CAAA1207AE7EE00D80510 /* HardMode.sks */; };
+		106CAAA4207AE82900D80510 /* HardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CAAA3207AE82900D80510 /* HardMode.swift */; };
 		108E30C420798E3200012389 /* GameMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 108E30C220798E3200012389 /* GameMenu.sks */; };
 		108E30C520798E3200012389 /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108E30C320798E3200012389 /* GameMenu.swift */; };
 		10E826362077BFD900A88F72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E826352077BFD900A88F72 /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		1030D5A5207903360059A560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1030D5A7207903B50059A560 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		106CAAA1207AE7EE00D80510 /* HardMode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HardMode.sks; sourceTree = "<group>"; };
+		106CAAA3207AE82900D80510 /* HardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardMode.swift; sourceTree = "<group>"; };
 		108E30C220798E3200012389 /* GameMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameMenu.sks; sourceTree = "<group>"; };
 		108E30C320798E3200012389 /* GameMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
 		10E826322077BFD900A88F72 /* SpaceGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,8 @@
 				1030D5A7207903B50059A560 /* GameViewController.swift */,
 				1030D5A4207903360059A560 /* Main.storyboard */,
 				10E8263B2077BFD900A88F72 /* GameScene.swift */,
+				106CAAA1207AE7EE00D80510 /* HardMode.sks */,
+				106CAAA3207AE82900D80510 /* HardMode.swift */,
 				108E30C220798E3200012389 /* GameMenu.sks */,
 				108E30C320798E3200012389 /* GameMenu.swift */,
 				10E826422077BFDB00A88F72 /* Assets.xcassets */,
@@ -246,6 +252,7 @@
 				1030D5A6207903360059A560 /* Main.storyboard in Resources */,
 				10E826432077BFDB00A88F72 /* Assets.xcassets in Resources */,
 				10E826462077BFDB00A88F72 /* LaunchScreen.storyboard in Resources */,
+				106CAAA2207AE7EE00D80510 /* HardMode.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +280,7 @@
 				108E30C520798E3200012389 /* GameMenu.swift in Sources */,
 				1030D5A8207903B50059A560 /* GameViewController.swift in Sources */,
 				10E8263C2077BFD900A88F72 /* GameScene.swift in Sources */,
+				106CAAA4207AE82900D80510 /* HardMode.swift in Sources */,
 				10E826362077BFD900A88F72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
