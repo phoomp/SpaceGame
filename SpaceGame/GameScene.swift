@@ -5,7 +5,6 @@
 //  Created by Phoom Punpeng on 6/4/18.
 //  Copyright © 2018 Phoom Punpeng. All rights reserved.
 //
-
 import SpriteKit
 import GameplayKit
 
@@ -16,15 +15,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var bullets = SKSpriteNode()
     var bulletSpawnPointX : CGFloat! = nil
     var bulletSpawnPointY : CGFloat! = nil
-    var difficultLevel = 950
+    var difficultLevel = 99
+    var gameOverAlready = 0
     var score = 0;
-    var gameOverAlready = 0;
-
+    
     // array of space rock
     var spaceRocks: [SKSpriteNode] = []
     
     override func didMove(to view: SKView) {
-        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(GameScene.moveAllObjects), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.007, target: self, selector: #selector(GameScene.moveAllObjects), userInfo: nil, repeats: true)
         playerShip = self.childNode(withName: "playerShip") as! SKSpriteNode
         playerShip.physicsBody = SKPhysicsBody(circleOfRadius: playerShip.size.height/2)
         playerShip.physicsBody?.categoryBitMask = 0b0010
@@ -45,7 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ScoreLabel.zPosition = 4
         addChild(ScoreLabel)
     }
-
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let touchLocation = touch.location(in: self)
@@ -73,8 +72,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     @objc func moveAllObjects() {
         moveBullets()
-        createSpaceRock()
         moveSpaceRock()
+        createSpaceRock()
     }
     
     @objc func moveBullets() {
@@ -89,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     @objc func removeBullets() {
         for child in children {
-            if child.position.y > 670 {
+            if child.position.y > 900 {
                 child.removeFromParent()
             }
         }
@@ -102,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createSpaceRock() {
-        if arc4random_uniform(1000) >= difficultLevel {
+        if arc4random_uniform(100) >= difficultLevel {
             let texture = SKTexture(imageNamed: "spaceRock")
             let rock = SKSpriteNode(texture: texture)
             let randomNumber = CGFloat(arc4random_uniform(640))
@@ -115,17 +114,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             rock.physicsBody?.categoryBitMask = 0b0001
             rock.physicsBody?.contactTestBitMask = 1
             rock.physicsBody?.collisionBitMask = 0b0011
-            rock.physicsBody?.affectedByGravity = true
+            rock.physicsBody?.affectedByGravity = false
             addChild(rock)
         }
     }
-    @objc func moveSpaceRock() {
+    func moveSpaceRock() {
         enumerateChildNodes(withName: "spaceRocks", using: { (rock, stop) in
-            rock.position.y -= 0.01
+            rock.position.y -= 5
             rock.zRotation += 0.1
-            if rock.position.y <= -690 && self.gameOverAlready == 0 {
+            if rock.position.y <= -670 && self.gameOverAlready == 0 {
                 self.gameOver()
                 self.gameOverAlready = 1
+                
             }
         })
     }
