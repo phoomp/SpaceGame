@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1030D5A6207903360059A560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1030D5A4207903360059A560 /* Main.storyboard */; };
 		1030D5A8207903B50059A560 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030D5A7207903B50059A560 /* GameViewController.swift */; };
+		1049EB35207C351A00B70550 /* BouncyRock.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1049EB34207C351A00B70550 /* BouncyRock.sks */; };
+		1049EB37207C353100B70550 /* BouncyRock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049EB36207C353100B70550 /* BouncyRock.swift */; };
 		106CAAA2207AE7EE00D80510 /* HardMode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 106CAAA1207AE7EE00D80510 /* HardMode.sks */; };
 		106CAAA4207AE82900D80510 /* HardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CAAA3207AE82900D80510 /* HardMode.swift */; };
 		108E30C420798E3200012389 /* GameMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 108E30C220798E3200012389 /* GameMenu.sks */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		1030D5A5207903360059A560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1030D5A7207903B50059A560 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1049EB34207C351A00B70550 /* BouncyRock.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BouncyRock.sks; sourceTree = "<group>"; };
+		1049EB36207C353100B70550 /* BouncyRock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyRock.swift; sourceTree = "<group>"; };
 		106CAAA1207AE7EE00D80510 /* HardMode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HardMode.sks; sourceTree = "<group>"; };
 		106CAAA3207AE82900D80510 /* HardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardMode.swift; sourceTree = "<group>"; };
 		108E30C220798E3200012389 /* GameMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameMenu.sks; sourceTree = "<group>"; };
@@ -110,9 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				10E826352077BFD900A88F72 /* AppDelegate.swift */,
-				10E826372077BFD900A88F72 /* GameScene.sks */,
 				1030D5A7207903B50059A560 /* GameViewController.swift */,
 				1030D5A4207903360059A560 /* Main.storyboard */,
+				10E826372077BFD900A88F72 /* GameScene.sks */,
+				1049EB34207C351A00B70550 /* BouncyRock.sks */,
+				1049EB36207C353100B70550 /* BouncyRock.swift */,
 				10E8263B2077BFD900A88F72 /* GameScene.swift */,
 				106CAAA1207AE7EE00D80510 /* HardMode.sks */,
 				106CAAA3207AE82900D80510 /* HardMode.swift */,
@@ -250,6 +256,7 @@
 				108E30C420798E3200012389 /* GameMenu.sks in Resources */,
 				10E826382077BFD900A88F72 /* GameScene.sks in Resources */,
 				1030D5A6207903360059A560 /* Main.storyboard in Resources */,
+				1049EB35207C351A00B70550 /* BouncyRock.sks in Resources */,
 				10E826432077BFDB00A88F72 /* Assets.xcassets in Resources */,
 				10E826462077BFDB00A88F72 /* LaunchScreen.storyboard in Resources */,
 				106CAAA2207AE7EE00D80510 /* HardMode.sks in Resources */,
@@ -277,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1049EB37207C353100B70550 /* BouncyRock.swift in Sources */,
 				108E30C520798E3200012389 /* GameMenu.swift in Sources */,
 				1030D5A8207903B50059A560 /* GameViewController.swift in Sources */,
 				10E8263C2077BFD900A88F72 /* GameScene.swift in Sources */,
